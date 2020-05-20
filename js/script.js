@@ -80,7 +80,6 @@ jQuery(document).ready(function($){
             $(this).addClass('active');
             var bookId = $(this).data('bookId');
             $('#book-details-card-container').html('Loading...');
-            console.log(bookId);
             axios.get('http://csc225.mockable.io/books/' + bookId).then(function(response){
                 var $bookCardDetails = createBookDetailsCard(response.data);
                 $('#book-details-card-container').html($bookCardDetails);
